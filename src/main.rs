@@ -70,6 +70,12 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
 // process: calculate tax
 // output: The tax is: {}.\nThe total is {}.
 
+struct State {
+    names: Vec<String>,
+    tax: f64,
+    counties: Vec<County>,
+}
+
 fn main() {
     // prompt order_amount "What is the order amount? "
     // prompt state "What state do you live in? "
