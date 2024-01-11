@@ -104,11 +104,31 @@ fn main() {
         },
     ];
     // prompt order_amount "What is the order amount? "
+    let order_amount: f64 = get_input("What is the order amount? ");
     // prompt state "What state do you live in? "
-    // calculate the tax
-    // if state has
-    // counties, prompt "What county do you live in? "
-    // add the extra charge to the tax.
-    // display the tax and total.
-    println!("Hello world!")
+    let state_input: String = get_input("What state do you live in? ");
+
+    let taxed_state: Option<&State> = states
+        .iter()
+        .find(|state| state.names.contains(&state_input.to_lowercase()));
+
+    match taxed_state {
+        Some(state) => {
+            let mut total_tax = state.tax;
+            if !state.counties.is_empty() {
+                let county_input: String = get_input("What county do you live in? ");
+                let taxed_county: Option<&County> = state
+                    .counties
+                    .iter()
+                    .find(|county| county.names.contains(&county_input.to_lowercase()));
+                match taxed_county {
+                    Some(county) => total_tax += county.tax,
+                    None => {}
+                }
+            }
+            let (tax, total): (f64, f64) = calculate_tax(order_amount, total_tax);
+            println!("The tax is: ${}.\nThe total is ${}.", tax, total);
+        }
+        None => println!("The tax is: $0.\nThe total is {}.", order_amount),
+    }
 }
