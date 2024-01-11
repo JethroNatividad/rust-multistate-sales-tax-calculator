@@ -81,6 +81,7 @@ struct State {
 }
 
 fn main() {
+    // write states
     // prompt order_amount "What is the order amount? "
     // prompt state "What state do you live in? "
     // calculate the tax
