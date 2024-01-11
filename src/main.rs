@@ -80,24 +80,29 @@ struct State {
     counties: Vec<County>,
 }
 
-// Eau Claire (+0.005) | Dunn (0.004)
-
 fn main() {
     // write states
-    let states: Vec<State> = vec![State {
-        names: vec!["wisconsin".to_string(), "wi".to_string()],
-        tax: 5.0,
-        counties: vec![
-            County {
-                names: vec!["eau claire".to_string(), "eau claire county".to_string()],
-                tax: 0.5,
-            },
-            County {
-                names: vec!["dunn".to_string(), "dunn county".to_string()],
-                tax: 0.4,
-            },
-        ],
-    }];
+    let states: Vec<State> = vec![
+        State {
+            names: vec!["wisconsin".to_string(), "wi".to_string()],
+            tax: 5.0,
+            counties: vec![
+                County {
+                    names: vec!["eau claire".to_string(), "eau claire county".to_string()],
+                    tax: 0.5,
+                },
+                County {
+                    names: vec!["dunn".to_string(), "dunn county".to_string()],
+                    tax: 0.4,
+                },
+            ],
+        },
+        State {
+            names: vec!["illinois".to_string(), "il".to_string()],
+            tax: 8.0,
+            counties: vec![],
+        },
+    ];
     // prompt order_amount "What is the order amount? "
     // prompt state "What state do you live in? "
     // calculate the tax
