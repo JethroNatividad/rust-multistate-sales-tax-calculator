@@ -15,7 +15,7 @@ fn calculate_tax(order_amount: f64, tax_percentage: f64) -> (f64, f64) {
     let total = order_amount + tax;
     (round_decimal(tax, 2), round_decimal(total, 2))
 }
-
+#[cfg(test)]
 mod tests {
     use super::*;
 
