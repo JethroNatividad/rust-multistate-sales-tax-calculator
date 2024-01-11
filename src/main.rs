@@ -1,7 +1,7 @@
 use std::io;
 use std::io::Write;
-// Tax calculator, State: winsconsin | illinois (8% tax), if winsconsin - county:  Eau Claire (+0.005) | Dunn (0.004) , other states: no tax.
-// Inputs: order_amount, state, county(only if state: winsconsin)
+// Tax calculator, State: wisconsin | illinois (8% tax), if wisconsin - county:  Eau Claire (+0.005) | Dunn (0.004) , other states: no tax.
+// Inputs: order_amount, state, county(only if state: wisconsin)
 // process: calculate tax
 // output: The tax is: {}.\nThe total is {}.
 
@@ -66,6 +66,16 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
     }
 }
 
+// Inputs: order_amount, state, county(only if state: wisconsin)
+// process: calculate tax
+// output: The tax is: {}.\nThe total is {}.
+
 fn main() {
-    println!("Hello, world!");
+    // prompt order_amount "What is the order amount? "
+    // prompt state "What state do you live in? "
+    // calculate the tax
+    // if state has
+    // counties, prompt "What county do you live in? "
+    // add the extra charge to the tax.
+    // display the tax and total.
 }
