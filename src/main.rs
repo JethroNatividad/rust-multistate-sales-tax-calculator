@@ -15,6 +15,7 @@ fn calculate_tax(order_amount: f64, tax_percentage: f64) -> (f64, f64) {
     let total = order_amount + tax;
     (round_decimal(tax, 2), round_decimal(total, 2))
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -65,10 +66,6 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
         }
     }
 }
-
-// Inputs: order_amount, state, county(only if state: wisconsin)
-// process: calculate tax
-// output: The tax is: {}.\nThe total is {}.
 
 struct County {
     names: Vec<String>,
